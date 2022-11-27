@@ -56,9 +56,9 @@ limit.sigma_x_t = limit.sigma_x_t/kd;
 limit.sigma_x_c = limit.sigma_x_c/kd;
 limit.sigma_y_t = limit.sigma_y_t/kd;
 limit.sigma_y_c = limit.sigma_y_c/kd;
-limit.sigma_shear = sqrt(limit.sigma_x_t*limit.sigma_y_c);
-limit.sigma_shear_x = sqrt(limit.sigma_x_t*limit.sigma_x_c);
-limit.sigma_shear_y = sqrt(limit.sigma_y_t*limit.sigma_y_c);
+limit.sigma_sqrt = sqrt(limit.sigma_x_t*limit.sigma_y_c);
+limit.sigma_sqrt_x = sqrt(limit.sigma_x_t*limit.sigma_x_c);
+limit.sigma_sqrt_y = sqrt(limit.sigma_y_t*limit.sigma_y_c);
 limit.tao = limit.tao/kd;
 limit.sigma_br = limit.sigma_br/kd;
 
