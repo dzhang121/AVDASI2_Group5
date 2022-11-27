@@ -40,3 +40,10 @@ bf = 3e-3; %flange for I beam equivalence
 tf = 3e-3;
 
 bw_newton = bw-tf; %length w.r.t to mid point of flange, bw'
+
+%% Centre Bar
+%Bending
+d_bar = 20e-3;
+t_bar = 3e-3;
+d0_bar = d_bar - 2*t_bar;
+d_hole = 4e-3;
