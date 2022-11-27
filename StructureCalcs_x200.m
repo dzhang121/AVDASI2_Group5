@@ -11,32 +11,11 @@ RF=struct();
 %% factors
 kd = 1.2; %material property knock down factor
 
-%% material properties - RAW Tube
-%modulus
-limit_Ex=115000E6;
-limit_Ey=18000E6;
-limit_E=sqrt(limit_Ex*limit_Ey);
-limit_Gxy=4000E6;
-vxy=0.155; %poisson
-vyx=0.023; %poisson
-v_sqrt=sqrt(vxy*vyx);
+%% material properties 
+material = 'CFRP_90_0_10_percent'; %base tube
 
-%strength
-limit_sigma_t = 1050E6; %tensile yield strength
-limit_sigma_c = 580E6; %compressive yield strength
-limit_tao = 30E6; %shear strength
-limit_sigma_br = 870E6; %bearing ??? to be confirmed
+[limit,vxy,vyx,v_sqrt]= fngetproperties(material);
 
-%pin - to be added
-
-%knock down
-limit_E = limit_E/kd;
-limit_Gxy=limit_Gxy/kd;
-limit_sigma_t = limit_sigma_t/kd;
-limit_sigma_c = limit_sigma_c/kd;
-limit_sigma_shear = sqrt(limit_sigma_t*limit_sigma_c);
-limit_tao = limit_tao/kd;
-limit_sigma_br = limit_sigma_br/kd;
 
 %% Geometry
 %1g
