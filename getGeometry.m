@@ -29,3 +29,14 @@ ZM = 0.031; %TBC
 P_HTP = -AUM*g* ZM_ /ZH_;
 P_MWP = (AUM*g - P_HTP) - m_bat*g - m_wing*g;
 P_W = P_MWP/2; %half wing effective lift
+
+%% Rib
+c=300e-3; %chord
+thickness = 0.15;
+
+bw = c*thickness*0.8; %rib height, scaled by 0.8 of aerofoil thickness
+tw = 1.5e-3; %rib thickness
+bf = 3e-3; %flange for I beam equivalence
+tf = 3e-3;
+
+bw_newton = bw-tf; %length w.r.t to mid point of flange, bw'
