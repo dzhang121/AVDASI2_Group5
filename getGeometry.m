@@ -9,7 +9,7 @@ D = D0;
 
 r = D/2;
 t = 0.5e-3; %thickness
-t = 1.25e-3; % two layers
+t = 1.25e-3; % reinforced
 
 r = D/2;
 m_bat = 2;

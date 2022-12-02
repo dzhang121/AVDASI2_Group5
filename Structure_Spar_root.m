@@ -6,7 +6,6 @@ close all
 %% MISC
 loadfactor = 9; %6*1.5
 g = 9.81*loadfactor;
-RF=struct();
 
 %% factors
 kd = 1.2; %material property knock down factor
@@ -18,6 +17,16 @@ material = 'CFRP_90_0_10_percent'; %base tube
 
 %% Geometry
 getGeometry
+
+%overwrite and sweep spar tube wall thickness 
+RF_table = table; %initiate result table
+
+for n_reinforcement = 0:5
+
+t=0.5e-3; %original thickness
+t = t + 0.25e-3*n_reinforcement;
+
+RF=struct();
 
 %% At Root
 
@@ -67,4 +76,9 @@ RF.shear_buckling = limit.tao_cr/tao;
 FI_cr = 1/RF.compres_buckling + (1/RF.shear_buckling)^2;
 RF.compres_shear_cr_combined = 1/FI_cr;
 
+temp = struct2table(RF);
+temp.n_reinforcement = n_reinforcement;
+RF_table = [RF_table; temp];
+end
 
+fnplot(RF_table);
